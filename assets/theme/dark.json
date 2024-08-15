@@ -1,0 +1,52 @@
+{
+    "whiteBackground": "#26384A",
+    "lightBlackBG": "#26384A",
+    "primary": "#979797",
+    "secondary": "#C4C4C4",
+    "tertiary": "#35B0AB",
+    "statusBarBackgroundColor": "#35B0AB",
+    "accordionLightColor3": "rgba(248,249,253,0.3)",
+    "accordionLightColor5": "rgba(248,249,253,0.5)",
+    "text": {
+        "white": "#000000",
+        "black": "#000000",
+        "primary": "#ffffff",
+        "placeHolder": "rgba(255, 255, 255, 0.5)",
+        "placeHolderLighColor": "grey",
+        "white40": "rgba(255, 255, 255, 0.4)",
+        "light": "#35B0AB",
+        "greyishBlue": "#9DA6B4",
+        "darkGrey": "#262626",
+        "red": "#CC0000",
+        "lightGrey": "#A0A5BA",
+        "subTitle": "rgba(255, 255, 255, 0.7)",
+        "tertiary": "rgba(53, 176, 171,1)",
+        "labelColor": "rgba(255, 255, 255, 0.5)"
+    },
+    "icon": {
+        "inActiveColor": "rgba(255, 255, 255, 1)",
+        "activeColor": "#35B0AB",
+        "primary": "#262626",
+        "lightColor": "rgba(255, 255, 255, 0.5)",
+        "secondary": "#000000"
+    },
+    "border": {
+        "white50": "rgba(255, 255, 255, 0.5)",
+        "grey": "D7E1EC",
+        "lightGrey": "#A0A5BA"
+    },
+    "button": {
+        "primary": "#35B0AB",
+        "white50": "rgba(255, 255, 255, 0.5)",
+        "secondary": "#C1C6CF",
+        "white": "#ffffff"
+    },
+    "indicator": {
+        "primary": "#FEBD21",
+        "secondary": "#FFFFFF",
+        "backgroundColor": "rgba(155,155,155,0.25)"
+    },
+    "drawer": {
+        "backgroundColor": "#000000"
+    }
+}

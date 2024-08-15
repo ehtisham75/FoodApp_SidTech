@@ -1,0 +1,28 @@
+{
+    "appName": {
+        "foodApp": "Food App"
+    },
+    "loginTitle": "LOGIN",
+    "signin": "SIGN IN",
+    "registerTitle": "CREATE NEW ACCOUNT",
+    "newPasswordTitle": "NEW PASSWORD",
+    "login": "Login",
+    "register": "Register",
+    "update": "Update",
+    "continue": "Continue",
+    "verify": "Verify",
+    "updatePasswordTitle": "PASSWORD\nUPDATED!",
+    "forgetPasswordTitle": "FORGOT PASSWORD",
+    "forgot_Password": "Forgot Password?",
+    "resetPasswordTitle": "RESET PASSWORD",
+    "your_password_hasbeen_updated": "Your password has been updated\nsuccessfully",
+    "enter_your_registered_email": "Please enter your registered email address",
+    "please_check_email_enter_forwarded_code": "Please check the email.\nEnter the forwarded code below:",
+    "the_code_will_resend_in_30_seconds": "The code will be resend in 30 seconds.",
+    "did_not_receive_code": "Did not receive the code?",
+    "resend_the_code": "Resend the code.",
+    "alreadyHaveAccount": "Already have an Account?",
+   
+    "Headers": { },
+    "Buttons": { }
+}

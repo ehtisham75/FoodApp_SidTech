@@ -1,0 +1,58 @@
+{
+    "whiteBackground": "#ffffff",
+    "lightBlackBG": "#26384A",
+    "primary": "#7356B5",
+    "secondary": "#FFFFFF",
+    "tertiary": "#EDD24B",
+    "statusBarBackgroundColor": "#EFE8FF",
+    "accordionLightColor3": "rgba(248,249,253,0.3)",
+    "accordionLightColor5": "rgba(248,249,253,0.5)",
+    "text": {
+        "white": "#ffffff",
+        "black": "#000000",
+        "primary": "#000000",
+        "placeHolder": "#9B9B9B",
+        "placeHolderLighColor": "rgba(32, 58, 95, 0.3)",
+        "white40": "rgba(255, 255, 255, 0.4)",
+        "light": "#EFE8FF",
+        "greyishBlue": "#9DA6B4",
+        "darkGrey": "#262626",
+        "red": "#CC0000",
+        "lightGrey": "#A0A5BA",
+        "subTitle": "rgba(255, 255, 255, 0.7)",
+        "tertiary": "rgba(53, 176, 171,1)",
+        "labelColor": "rgba(32, 58, 95, 0.4)",
+        "primaryText": "#7356B5",
+        "secondary": "#231F20"
+    },
+    "icon": {
+        "inActiveColor": "#FFFFFF",
+        "activeColor": "#EDD24B",
+        "primary": "#262626",
+        "lightColor": "rgba(0, 0, 0, 1)",
+        "secondary": "#FFFFFF"
+    },
+    "border": {
+        "primary": "#7356B5",
+        "white50": "rgba(255, 255, 255, 0.5)",
+        "grey": "#D7E1EC",
+        "lightGrey": "rgba(32,58,95,0.4)"
+    },
+    "button": {
+        "primary": "#7356B5",
+        "white50": "rgba(255, 255, 255, 0.5)",
+        "secondary": "#CCCACA",
+        "white": "#ffffff"
+    },
+    "indicator": {
+        "primary": "#7356B5",
+        "secondary": "#FFFFFF",
+        "backgroundColor": "rgba(155,155,155,0.25)"
+    },
+    "drawer": {
+        "backgroundColor": "#FFFFFF"
+    },
+    "input": {
+        "primary": "#F5F5F5"
+    }
+}
