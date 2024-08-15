@@ -29,7 +29,7 @@ const App = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
-        initialRouteName={AppRoutes.onboard}
+        // initialRouteName={AppRoutes.onboard}
         screenOptions={{ headerShown: false }}
       >
 
