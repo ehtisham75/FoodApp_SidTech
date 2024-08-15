@@ -4,39 +4,25 @@ import { Colors } from '../utils/Colors'
 import { AppFonts } from '../constants/AppFonts'
 import { AppImages } from '../assets/AppImages'
 import { AppRoutes } from '../constants/AppRoutes'
-import { Menu, MenuItem, MenuDivider } from 'react-native-material-menu';
 import moment from 'moment'
 
 type headerProps = {
     // greatings: string;
-    userImage: ImageProps;
-    userTitle: string;
+    userImage?: ImageProps;
+    userTitle?: string;
     titleColor?: string;
     backgroundColor?: string,
-    onProfileAction: () => void;
-    onSearchAction: () => void;
-    onMenuAction: () => void;
-    IsMenuVisible: boolean;
-    IsMenuHide: () => void;
+    onProfileAction?: () => void;
+    onSearchAction?: () => void;
+    onMenuAction?: () => void;
+    IsMenuVisible?: boolean;
+    IsMenuHide?: () => void;
     navigation: any
 }
 
 const HomeHeader = ({ userImage, userTitle, titleColor, onProfileAction, onSearchAction, onMenuAction, IsMenuVisible, IsMenuHide, navigation }: headerProps) => {
     const [searchText, setSearchText] = useState('');
     const [greeting, setGreeting] = useState('');
-
-    useEffect(() => {
-        const currentTime = moment();
-        const currentHour = currentTime.hour();
-
-        if (currentHour >= 4 && currentHour < 12) {
-            setGreeting('Good Morning');
-        } else if (currentHour >= 12 && currentHour < 18) {
-            setGreeting('Good Afternoon');
-        } else {
-            setGreeting('Good Night');
-        }
-    }, []);
 
     const handleSubmit = () => {
     };
@@ -46,73 +32,24 @@ const HomeHeader = ({ userImage, userTitle, titleColor, onProfileAction, onSearc
             <View style={styles.box}>
 
                 <View style={styles.icons}>
-                    <TouchableOpacity onPress={() => { onMenuAction() }}>
-                        <Image resizeMode='contain' source={AppImages.menuIcon} style={styles.menu} />
+                    <TouchableOpacity onPress={() => { }}>
+                        <Image resizeMode='contain' source={AppImages.locationIcon} style={styles.menu} />
                     </TouchableOpacity>
-
-                    {/* ======== Pop up Menu ========== */}
-                    <View>
-                        <Menu
-                            visible={IsMenuVisible}
-                            style={{ borderRadius: 10, paddingTop: 10 }}
-                            onRequestClose={() => { IsMenuHide && IsMenuHide(); }}>
-
-                            <View style={styles.menuContainer}>
-                                <MenuItem style={styles.menuItemStyle} textStyle={styles.txtStyle}
-                                    onPress={() => { IsMenuHide && IsMenuHide(); navigation.navigate(AppRoutes.About) }}
-                                >About</MenuItem>
-                            </View>
-
-                            <View style={styles.menuContainer}>
-                                <MenuItem style={styles.menuItemStyle} textStyle={styles.txtStyle}
-                                    onPress={() => { IsMenuHide && IsMenuHide(); navigation.navigate(AppRoutes.settings) }}
-                                >Settings</MenuItem>
-                            </View>
-
-                            <View style={styles.menuContainer}>
-                                <MenuItem style={styles.menuItemStyle} textStyle={styles.txtStyle}
-                                    onPress={() => { IsMenuHide && IsMenuHide(); navigation.navigate(AppRoutes.termConditions) }}
-                                >Terms & Conditions</MenuItem>
-                            </View>
-
-                            <View style={styles.menuContainer}>
-                                <MenuItem style={styles.menuItemStyle} textStyle={styles.txtStyle}
-                                    onPress={() => { IsMenuHide && IsMenuHide(); navigation.navigate(AppRoutes.privacyPolicy) }}
-                                >Privacy & Policy</MenuItem>
-                            </View>
-                        </Menu >
-                    </View>
-
                 </View>
 
                 <View style={styles.textBox}>
-                    <Text style={styles.greeting}>{greeting}</Text>
-                    <Text numberOfLines={1} style={styles.name}>{userTitle}</Text>
+                    <Text style={styles.greeting}>Delivering to</Text>
+                    <Text numberOfLines={1} style={styles.name}>My Home</Text>
                 </View>
 
-                <TouchableOpacity onPress={() => { onProfileAction() }}>
-                    <Image resizeMode='cover' source={userImage} style={styles.profileImg} />
+                <TouchableOpacity onPress={() => { }}>
+                    <Image resizeMode='cover' source={AppImages.bellIcon} style={styles.profileImg} />
                 </TouchableOpacity>
 
-            </View>
+                <TouchableOpacity onPress={() => { }}>
+                    <Image resizeMode='cover' source={AppImages.userIcon} style={styles.profileImg} />
+                </TouchableOpacity>
 
-            <View style={styles.searchBox}>
-                <View style={styles.inputContainer}>
-                    <TextInput
-                        placeholder="Search..."
-                        placeholderTextColor={Colors.gray40}
-                        value={searchText}
-                        onChangeText={setSearchText}
-                        onSubmitEditing={handleSubmit}
-                        style={styles.searchInput}
-                    />
-                </View>
-
-                <View style={styles.iconContainer}>
-                    <TouchableOpacity onPress={() => { onSearchAction && onSearchAction() }}>
-                        <Image resizeMode='contain' source={AppImages.searchIcon} style={styles.searchIcon} />
-                    </TouchableOpacity>
-                </View>
             </View>
         </View>
     )

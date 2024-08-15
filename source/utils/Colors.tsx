@@ -1,6 +1,6 @@
 export enum Colors {
-  primary_color = "#7356B5",
-  secondary_color = "#EDEDF0",
+  primary_color = "#FFFFFF",
+  secondary_color = "#000",
   tertiary_color = "#4A3083",
 
   lightPurple = "#B696FF",
@@ -18,15 +18,15 @@ export enum Colors {
   border_line_color = "#EAE5E5",
 
   white_text_color = "#FFFFFF",
-  darkBlue_text_color = "#451088",
+  dark_text_color = "#556065",
   black_text_color = "#000000",
 
   white_background = "#FFFFFF",
   light_background = "#EDEDF0",
 
-  gray10 = "#EFE8FF",
-  gray20 = "#F0F0F0",
-  gray30 = "#EDEDF0",
+  gray10 = "#E6E6E6",
+  gray20 = "#F2F2EA",
+  gray30 = "#747C7C",
   gray40 = "#A1A1A1",
   gray50 = "#D2C6EE",
   gray60 = "#CCCACA",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform, StyleSheet } from 'react-native'
+import { Platform, StyleSheet,Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from '../utils/Colors';
 import { AppRoutes } from '../constants/AppRoutes';
@@ -10,11 +10,11 @@ import CartScreen from '../screens/cart/CartScreen';
 import MessageScreen from '../screens/message/MessageScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 // ========== ICONS ==============
-import TabReminderIcon from '../components/SvgIcons/TabReminderIcon';
 import TabHomeIcon from '../components/SvgIcons/TabHomeIcon';
 import TabProfileIcon from '../components/SvgIcons/TabProfileIcon';
 import TabChatIcon from '../components/SvgIcons/TabChatIcon';
 import TabNotificationIcon from '../components/SvgIcons/TabNotificationIcon';
+import { AppImages } from '../assets/AppImages';
 
 const TabNavigator = () => {
     const Tab = createBottomTabNavigator();
@@ -86,10 +86,10 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <TabReminderIcon
-                                color={focused ? activeIconColor : inActiveIconColor}
-                                size={focused ? activeIconSize : inActiveIconSize}
-                            />
+                           <Image
+                           source={AppImages.messageTabIcon}
+                           style={{width: activeIconSize,height:activeIconSize}}
+                           />
                         )
 
                     },
