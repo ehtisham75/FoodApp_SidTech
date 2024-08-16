@@ -7,7 +7,7 @@ import { NavigationContainer, useNavigationContainerRef } from "@react-navigatio
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // =============== Screens ================
 import TabNavigator from './source/navigations/TabNavigator';
-import MainOnboardScreen from './source/screens/welcome/MainOnboardScreen';
+import SearchScreen from './source/screens/search/SearchScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,14 +32,9 @@ const App = () => {
         // initialRouteName={AppRoutes.onboard}
         screenOptions={{ headerShown: false }}
       >
-
-        {/* ============== Welcome =============== */}
-        {/* <Stack.Screen name={AppRoutes.onboard} component={MainOnboardScreen} /> */}
-
-        {/* ============== Auth =============== */}
-
         {/* ============== Home =============== */}
         <Stack.Screen name={AppRoutes.bottomTab} component={BottomTabNavigator} />
+        <Stack.Screen name={AppRoutes.searchScreen} component={SearchScreen} />
 
         {/* ============== Settings =============== */}
 

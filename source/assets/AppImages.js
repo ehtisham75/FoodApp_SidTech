@@ -12,12 +12,15 @@ export const AppImages = {
     // activitiesTabIcon: require(iconLoc + 'contacts.png'),
     // timeTabIcon: require(iconLoc + 'time.png'),
     // sosTabIcon: require(iconLoc + 'sos.png'),
+
     // home
     // menuIcon: require(iconLoc + 'menu.png'),
     bellIcon: require(iconLoc + 'bell.png'),
     locationIcon: require(iconLoc + 'location.png'),
     searchIcon: require(iconLoc + 'search.png'),
     voiceIcon: require(iconLoc + 'voice.png'),
+    banner: require(imgLoc + 'banner.png'),
+
     // // main
     // backIcon: require(iconLoc + 'back.png'),
     // closeIcon: require(iconLoc + 'close.png'),

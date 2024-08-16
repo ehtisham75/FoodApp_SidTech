@@ -1,5 +1,5 @@
 export const AppFonts = {
-    Inter: {
+    Poppins: {
         black: "Poppins-Black",
         bold: "Poppins-Bold",
         light: "Poppins-Light",

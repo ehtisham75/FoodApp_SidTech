@@ -5,6 +5,7 @@ import { AppFonts } from '../constants/AppFonts'
 import { AppImages } from '../assets/AppImages'
 import { AppRoutes } from '../constants/AppRoutes'
 import moment from 'moment'
+import FontSize from '../screens/Styles/FontSize'
 
 type headerProps = {
     // greatings: string;
@@ -32,7 +33,7 @@ const HomeHeader = ({ userImage, userTitle, titleColor, onProfileAction, onSearc
             <View style={styles.box}>
 
                 <View style={styles.icons}>
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity activeOpacity={0.7} onPress={() => { }}>
                         <Image resizeMode='contain' source={AppImages.locationIcon} style={styles.menu} />
                     </TouchableOpacity>
                 </View>
@@ -42,13 +43,16 @@ const HomeHeader = ({ userImage, userTitle, titleColor, onProfileAction, onSearc
                     <Text numberOfLines={1} style={styles.name}>My Home</Text>
                 </View>
 
-                <TouchableOpacity onPress={() => { }}>
-                    <Image resizeMode='cover' source={AppImages.bellIcon} style={styles.profileImg} />
-                </TouchableOpacity>
+                <View style={styles.circleBox}>
 
-                <TouchableOpacity onPress={() => { }}>
-                    <Image resizeMode='cover' source={AppImages.userIcon} style={styles.profileImg} />
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={() => { }}>
+                        <Image resizeMode='cover' source={AppImages.bellIcon} style={styles.profileImg} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => { }}>
+                        <Image resizeMode='cover' source={AppImages.userIcon} style={styles.profileImg} />
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </View>
@@ -59,15 +63,15 @@ export default HomeHeader
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.white_background,
+        // backgroundColor: Colors.blue,
         paddingTop: Platform.OS == 'ios' ? "2%" : "11%",
         paddingBottom: "4%",
-        paddingHorizontal: 25,
+        paddingHorizontal: 15,
     },
     txtStyle: {
         fontSize: 14,
         color: 'black',
-        fontFamily: AppFonts.Inter.normal,
+        fontFamily: AppFonts.Poppins.normal,
     },
     menuItemStyle: {
         height: 35,
@@ -79,39 +83,41 @@ const styles = StyleSheet.create({
     },
     box: {
         flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'space-between',
-        // backgroundColor: 'plum',
     },
     icons: {
         alignItems: 'flex-start',
         marginTop: 8,
-        // backgroundColor: 'cyan',
     },
     menu: {
         width: 25,
         height: 25,
-        tintColor: Colors.primary_color,
     },
     textBox: {
-        marginHorizontal: 10,
-        marginLeft: 14,
         flex: 1,
+        marginHorizontal: 10,
+        marginLeft: 10,
+        justifyContent: 'center',
     },
     greeting: {
-        fontSize: 15,
-        color: Colors.tertiary_color,
-        fontFamily: AppFonts.Inter.regular,
+        ...FontSize.regular12,
+        color: Colors.dark_text_color,
     },
     name: {
-        fontSize: 20,
-        color: Colors.tertiary_color,
-        fontFamily: AppFonts.Inter.bold,
+        ...FontSize.bold16,
+        color: Colors.dark_text_color,
         textAlign: 'left',
+        bottom:5
+    },
+    circleBox: {
+        flex: 0.4,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     },
     profileImg: {
-        width: 48,
-        height: 48,
+        width: 37,
+        height: 37,
         borderRadius: 100,
     },
     searchBox: {
@@ -128,7 +134,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 14,
         color: Colors.primary_color,
-        fontFamily: AppFonts.Inter.regular,
+        fontFamily: AppFonts.Poppins.regular,
         paddingHorizontal: 10,
         paddingLeft: 20,
     },

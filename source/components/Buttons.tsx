@@ -29,9 +29,9 @@ const Buttons = ({ width, height, title, titleColor, titleSize, titleFontFamily,
             }}>
 
             <Text style={{
-                fontSize: titleSize ?? 17,
+                fontSize: titleSize ?? 14,
                 color: titleColor ?? Colors.white_text_color,
-                fontFamily: titleFontFamily ?? AppFonts.Inter.normal
+                fontFamily: titleFontFamily ?? AppFonts.Poppins.regular
             }}>{title}</Text>
 
         </TouchableOpacity>
