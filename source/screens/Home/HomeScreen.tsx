@@ -15,11 +15,6 @@ import RecommendTab from './RecommendTab'
 import OrderTab from './OrderTab'
 import { screenHeight, screenWidth } from '../Styles/ScreenSize'
 
-interface listProps {
-    item: any;
-    index: number;
-}
-
 const HomeScreen = ({ navigation }: MainProps) => {
     const [menu, setMenu] = useState(false);
     const [activeButton, setActiveButton] = useState(1);
@@ -84,15 +79,6 @@ const HomeScreen = ({ navigation }: MainProps) => {
         );
     }
 
-    const renderItemForBannerList = ({ item, index }: listProps) => (
-        <View key={index} style={{ marginBottom: 10, }}>
-            <ImageBackground
-                source={item.img} resizeMode='stretch'
-                style={{ width: "100%", height: 140, }}
-            />
-        </View>
-    );
-
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor={Colors.transparent} barStyle={"dark-content"} translucent={true} />
@@ -105,7 +91,7 @@ const HomeScreen = ({ navigation }: MainProps) => {
                 <ScrollView
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ paddingVertical: "4%", flexGrow: 1, }}
-                    style={{ paddingHorizontal: "4%",marginTop: 3, }}
+                    style={{ paddingHorizontal: "4%", marginTop: 3, }}
                 >
                     <View style={{ flex: 1 }}>
 
@@ -116,7 +102,6 @@ const HomeScreen = ({ navigation }: MainProps) => {
                         <View style={{
                             height: screenHeight.height25,
                             width: screenWidth.width92,
-                            // backgroundColor: 'red',
                         }}>
                             <PagerView onLastIndexPress={() => { }}>
                                 {homeBannerList.map((item, index) => (
@@ -166,15 +151,7 @@ const HomeScreen = ({ navigation }: MainProps) => {
                         </View>
 
                         <View style={{ flex: 1 }}>
-                            {orderTab && <View style={{ marginTop: 14, }}>
-                                <FlatList
-                                    scrollEnabled={false}
-                                    data={homeBannerList}
-                                    renderItem={renderItemForBannerList}
-                                    keyExtractor={(item, index) => index.toString()}
-                                    showsVerticalScrollIndicator={false}
-                                />
-                            </View>}
+                            {orderTab && <OrderTab />}
 
                             {recommendTab && <RecommendTab />}
 

@@ -3,27 +3,30 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, Platform } from 'react
 import { Colors } from '../utils/Colors'
 import { AppFonts } from '../constants/AppFonts'
 import { AppImages } from '../assets/AppImages'
+import BackIcon from './SvgIcons/BackIcon'
+import FontSize from '../screens/Styles/FontSize'
+import { screenWidth } from '../screens/Styles/ScreenSize'
 
 type headerProps = {
     ScreenTitle: string;
-    bgColor?: string,
     titleColor?: string;
     onBackPress: () => void;
 }
 
-const SimpleHeader = ({ ScreenTitle, onBackPress, bgColor, titleColor }: headerProps) => {
+const SimpleHeader = ({ ScreenTitle, onBackPress, titleColor }: headerProps) => {
     return (
-        <View style={{ ...styles.container, backgroundColor: bgColor ?? Colors.primary_color, }}>
+        <View style={{ ...styles.container }}>
             <View style={styles.box}>
 
                 <View style={styles.backIconWrap}>
-                    <TouchableOpacity onPress={() => { onBackPress() }} style={styles.backWrap}>
+                    <TouchableOpacity onPress={() => onBackPress && onBackPress()} style={styles.backWrap}>
                         <Image resizeMode='contain' source={AppImages.backIcon} style={styles.backIcon} />
+                        <Text style={{ ...styles.backText }}>Back</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.textBox}>
-                    <Text style={{ ...styles.titleText, color: titleColor ?? Colors.white_text_color, }}>{ScreenTitle}</Text>
+                    <Text style={{ ...styles.titleText, color: titleColor ?? Colors.black_text_color, }}>{ScreenTitle}</Text>
                 </View>
             </View>
         </View >
@@ -34,45 +37,46 @@ export default SimpleHeader
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: Platform.OS == 'ios' ? "15%" : "13%",
-        paddingBottom: "5%",
-        paddingHorizontal: 20,
+        paddingTop: Platform.OS == 'ios' ? "13%" : "10%",
+        paddingBottom: "3%",
+        paddingHorizontal: 10,
     },
     box: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        // backgroundColor: 'plum',
+        // backgroundColor: 'cyan',
     },
     backIconWrap: {
         alignItems: 'center',
         justifyContent: 'center',
         padding: 5,
-        borderRadius: 100,
-        backgroundColor: Colors.tertiary_color,
+        // backgroundColor: 'red',
     },
     backWrap: {
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
-        padding: 3,
-        left: -1.7,
-        // borderRadius: 100,
-        // backgroundColor: Colors.blue,
+        // padding: 3,
+        // backgroundColor: 'plum',
+        flexDirection: 'row',
     },
     backIcon: {
         width: 18,
         height: 18,
+    },
+    backText:{
+        ...FontSize.regular14,
+        marginLeft: 5,
     },
     textBox: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         // marginHorizontal: 10,
-        // backgroundColor: 'cyan',
+        // backgroundColor: 'green',
     },
     titleText: {
-        fontSize: 20,
-        fontFamily: AppFonts.Inter.bold,
-        marginLeft: "-9%",
+        ...FontSize.bold20,
+        marginLeft: -screenWidth.width16,
     },
 })

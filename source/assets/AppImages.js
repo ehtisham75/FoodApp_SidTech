@@ -9,20 +9,19 @@ export const AppImages = {
     homeTabIcon: require(iconLoc + 'house.png'),
     profileTabIcon: require(iconLoc + 'profile.png'),
     messageTabIcon: require(iconLoc + 'message.png'),
-    // activitiesTabIcon: require(iconLoc + 'contacts.png'),
-    // timeTabIcon: require(iconLoc + 'time.png'),
-    // sosTabIcon: require(iconLoc + 'sos.png'),
-
+    activitiesTabIcon: require(iconLoc + 'activities.png'),
+    cartTabIcon: require(iconLoc + 'cart.png'),
     // home
     // menuIcon: require(iconLoc + 'menu.png'),
     bellIcon: require(iconLoc + 'bell.png'),
     locationIcon: require(iconLoc + 'location.png'),
     searchIcon: require(iconLoc + 'search.png'),
+    searchIcon2: require(iconLoc + 'search2.png'),
     voiceIcon: require(iconLoc + 'voice.png'),
     banner: require(imgLoc + 'banner.png'),
 
-    // // main
-    // backIcon: require(iconLoc + 'back.png'),
+    // main
+    backIcon: require(iconLoc + 'back.png'),
     // closeIcon: require(iconLoc + 'close.png'),
     userIcon: require(iconLoc + 'user.png'),
 

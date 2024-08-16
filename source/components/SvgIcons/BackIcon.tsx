@@ -1,7 +1,8 @@
 import React from 'react'
 import { Svg, Path } from 'react-native-svg';
+import { Colors } from '../../utils/Colors';
 
-const BackIcon = ({ color = "#EDD24B", size = 20 }) => {
+const BackIcon = ({ color = Colors.black, size = 20 }) => {
     return (
         <Svg width="15"
             height="25"

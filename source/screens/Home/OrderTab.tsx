@@ -38,8 +38,6 @@ const OrderTab = () => {
           showsVerticalScrollIndicator={false}
         />
       </View>
-
-      <Text>OrderTab</Text>
     </View>
   )
 }

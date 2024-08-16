@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform, StyleSheet,Image } from 'react-native'
+import { Platform, StyleSheet, Image, Text, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from '../utils/Colors';
 import { AppRoutes } from '../constants/AppRoutes';
@@ -15,6 +15,8 @@ import TabProfileIcon from '../components/SvgIcons/TabProfileIcon';
 import TabChatIcon from '../components/SvgIcons/TabChatIcon';
 import TabNotificationIcon from '../components/SvgIcons/TabNotificationIcon';
 import { AppImages } from '../assets/AppImages';
+import FontSize from '../screens/Styles/FontSize';
+import { screenHeight } from '../screens/Styles/ScreenSize';
 
 const TabNavigator = () => {
     const Tab = createBottomTabNavigator();
@@ -37,6 +39,11 @@ const TabNavigator = () => {
                     paddingHorizontal: 5,
                     alignItems: 'center',
                     justifyContent: 'center'
+                },
+                tabBarLabelStyle: {
+                    textAlign: 'center',
+                    ...FontSize.bold10,
+                    // color:
                 }
             }}>
 
@@ -44,10 +51,15 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <TabHomeIcon
-                                color={focused ? activeIconColor : inActiveIconColor}
-                                size={focused ? activeIconSize : inActiveIconSize}
-                            />
+                            <>
+                                <Image source={AppImages.homeTabIcon}
+                                    style={{ ...styles.tabIcon, tintColor: focused ? Colors.black : Colors.dark_text_color }}
+                                />
+                                <Text style={{
+                                    ...FontSize.bold10,
+                                    color: focused ? Colors.black : Colors.dark_text_color
+                                }}>Home</Text>
+                            </>
                         )
 
                     },
@@ -58,10 +70,15 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <TabProfileIcon
-                                color={focused ? activeIconColor : inActiveIconColor}
-                                size={focused ? activeIconSize : inActiveIconSize}
-                            />
+                            <>
+                                <Image source={AppImages.activitiesTabIcon}
+                                    style={{ ...styles.tabIcon, tintColor: focused ? Colors.black : Colors.dark_text_color }}
+                                />
+                                <Text style={{
+                                    ...FontSize.bold10,
+                                    color: focused ? Colors.black : Colors.dark_text_color
+                                }}>Activities</Text>
+                            </>
                         )
 
                     },
@@ -72,10 +89,19 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <TabChatIcon
-                                color={focused ? activeIconColor : inActiveIconColor}
-                                size={focused ? activeIconSize : inActiveIconSize}
-                            />
+                            <>
+                                <View style={styles.cartIcon}>
+                                    <Image source={AppImages.cartTabIcon}
+                                        style={{ ...styles.tabIcon, transform: [{ rotate: '-45deg' }] }}
+                                    />
+                                </View>
+
+                                <Text style={{
+                                    ...FontSize.bold10,
+                                    color: focused ? Colors.black : Colors.dark_text_color,
+                                    top: -15
+                                }}>Cart</Text>
+                            </>
                         )
 
                     },
@@ -86,10 +112,15 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                           <Image
-                           source={AppImages.messageTabIcon}
-                           style={{width: activeIconSize,height:activeIconSize}}
-                           />
+                            <>
+                                <Image source={AppImages.messageTabIcon}
+                                    style={{ ...styles.tabIcon, tintColor: focused ? Colors.black : Colors.dark_text_color }}
+                                />
+                                <Text style={{
+                                    ...FontSize.bold10,
+                                    color: focused ? Colors.black : Colors.dark_text_color
+                                }}>Message</Text>
+                            </>
                         )
 
                     },
@@ -100,10 +131,15 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <TabNotificationIcon
-                                color={focused ? activeIconColor : inActiveIconColor}
-                                size={focused ? activeIconSize : inActiveIconSize}
-                            />
+                            <>
+                                <Image source={AppImages.profileTabIcon}
+                                    style={{ ...styles.tabIcon, tintColor: focused ? Colors.black : Colors.dark_text_color }}
+                                />
+                                <Text style={{
+                                    ...FontSize.bold10,
+                                    color: focused ? Colors.black : Colors.dark_text_color
+                                }}>Profile</Text>
+                            </>
                         )
 
                     },
@@ -116,4 +152,20 @@ const TabNavigator = () => {
 
 export default TabNavigator
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tabIcon: {
+        width: 20,
+        height: 20,
+        resizeMode: 'contain',
+    },
+    cartIcon:{
+        backgroundColor: Colors.black,
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
+        top: -screenHeight.height3,
+        transform: [{ rotate: '45deg' }] 
+    }
+})

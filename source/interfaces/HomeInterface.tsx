@@ -10,3 +10,8 @@ export interface FoodItemProps {
 export interface bannerProps {
     img: any;
 }
+
+export interface listProps {
+    item: any;
+    index: number;
+}

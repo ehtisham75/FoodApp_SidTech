@@ -1,11 +1,11 @@
 export const AppRoutes = {
     // === BottomTab ===
     bottomTab: "TabNavigator",
-    home: "HomeScreen",
-    activitiesTab: "ActivitiesScreen",
-    cartTab: "CartScreen",
-    messageTab: "MessageScreen",
-    profileTab: "ProfileScreen",
+    home: "Home",
+    activitiesTab: "Activities",
+    cartTab: "Cart",
+    messageTab: "Message",
+    profileTab: "Profile",
     // === Home Screens ===
     searchScreen:"SearchScreen"
 }
