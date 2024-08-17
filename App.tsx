@@ -29,10 +29,7 @@ const App = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator
-        // initialRouteName={AppRoutes.onboard}
-        screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* ============== Home =============== */}
         <Stack.Screen name={AppRoutes.bottomTab} component={BottomTabNavigator} />
         <Stack.Screen name={AppRoutes.searchScreen} component={SearchScreen} />
