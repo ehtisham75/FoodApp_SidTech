@@ -7,5 +7,6 @@ export const AppRoutes = {
     messageTab: "Message",
     profileTab: "Profile",
     // === Home Screens ===
-    searchScreen:"SearchScreen"
+    searchScreen:"SearchScreen",
+    productDetail:"ProductDetailScreen"
 }

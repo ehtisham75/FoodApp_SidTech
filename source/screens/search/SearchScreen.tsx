@@ -8,6 +8,7 @@ import FontSize from '../Styles/FontSize'
 import Buttons from '../../components/Buttons'
 import { screenHeight, screenWidth } from '../Styles/ScreenSize'
 import SimpleHeader from '../../components/SimpleHeader'
+import { AppRoutes } from '../../constants/AppRoutes'
 
 const SearchScreen = ({ navigation }: MainProps) => {
     const [searchText, setSearchText] = useState('');
@@ -27,11 +28,48 @@ const SearchScreen = ({ navigation }: MainProps) => {
             realPrice: 150,
             discountPrice: 105,
         },
+        {
+            img: AppImages.banner,
+            title: "Bottegea Fried Rice",
+            realPrice: 115,
+            discountPrice: 90,
+        },
+        {
+            img: AppImages.banner,
+            title: "Salmon with Rice",
+            realPrice: 130,
+            discountPrice: 100,
+        },
+        {
+            img: AppImages.banner,
+            title: "Bottegea Fried Rice",
+            realPrice: 110,
+            discountPrice: 105,
+        },
+        {
+            img: AppImages.banner,
+            title: "Salmon with Rice",
+            realPrice: 150,
+            discountPrice: 105,
+        },
+        {
+            img: AppImages.banner,
+            title: "Bottegea Fried Rice",
+            realPrice: 110,
+            discountPrice: 98,
+        },
+        {
+            img: AppImages.banner,
+            title: "Salmon with Rice",
+            realPrice: 150,
+            discountPrice: 105,
+        },
     ])
 
     const renderItemForDealList = ({ item, index }: listProps) => (
         <View style={{ flex: 1, margin: screenWidth.width2 }}>
             <TouchableOpacity
+                onPress={() => { navigation.navigate(AppRoutes.productDetail, {data: item}) }}
                 activeOpacity={0.7}
                 style={{
                     borderBottomColor: Colors.gray10,

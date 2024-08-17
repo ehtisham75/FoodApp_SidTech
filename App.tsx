@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // =============== Screens ================
 import TabNavigator from './source/navigations/TabNavigator';
 import SearchScreen from './source/screens/search/SearchScreen';
+import ProductDetailScreen from './source/screens/productDetails/ProductDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ const App = () => {
         {/* ============== Home =============== */}
         <Stack.Screen name={AppRoutes.bottomTab} component={BottomTabNavigator} />
         <Stack.Screen name={AppRoutes.searchScreen} component={SearchScreen} />
+        <Stack.Screen name={AppRoutes.productDetail} component={ProductDetailScreen} />
 
         {/* ============== Settings =============== */}
 
